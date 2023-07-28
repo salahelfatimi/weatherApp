@@ -2,7 +2,6 @@ import axios from "axios";
 import {  useEffect, useState } from "react";
 import cloud from "./images/cloud.png"
 import Clear from "./images/sany.png"
-import lightning from "./images/Lightning.png"
 import run from "./images/run.png"
 
 function App() {
@@ -85,7 +84,7 @@ function App() {
         <div className={`space-x-2 text-center ${city.length === 0 ? 'hidden ' : ''}`}>
             <label htmlFor="City" className=" font-mono font-bold uppercase">City</label>
             <select className=" font-mono p-1 rounded-lg"  name="City" id="City" onChange={findWether}>
-              <option defaultChecked value='nothing'>Choose City</option>
+              <option defaultChecked  value='nothing'>Choose City</option>
               {city.map((city,key)=>
               <option value={city} key={key}>{city}</option>
               )
@@ -101,11 +100,7 @@ function App() {
               <div className=" flex items-center justify-center gap-2">
                 <div className=" text-4xl font-mono font-bold text-white">{wether.main.feels_like==0?'': `${Math.floor(wether.main.feels_like - 273.15)}°`}</div>
                 <div className=" text-2xl  uppercase  text-white">{wether.weather[0].main}</div>
-              </div>
-              
-
-          
-              
+              </div>    
       </div>
       </div>
      
